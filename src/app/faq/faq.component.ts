@@ -27,20 +27,17 @@ export class FaqComponent implements OnInit {
   public senha!: string;
   public mensagem!: string;
   public senhaRepetida!: string;
+  public documento!: string;
   public senhaLogin!: string;
   public emailLogin!: string;
-  public razaoSocial!: string;
-  public nomeFantasia!: string;
-  public cnpj!: string;
   public _msgErroNome!: string;
   public _msgErroTelefone!: string;
+  public _msgErroDocumento!: string;
   public _msgErroEmail!: string;
   public _msgSenha!: string;
   public _msgSenhaForte!: string;
   public _msgSenhaFraca!: string;
-  public _msgErroRazao!: string;
   public _msgErroMensagem!: string;
-  public _msgErroCnpj!: string;
   public cont = 0;
   
 
@@ -115,11 +112,11 @@ export class FaqComponent implements OnInit {
     }
 
   
-  public validaEmpresa(){
+  public validaProfissional(){
 
-    console.log("entrou no validaEmpresa");
+    console.log("entrou no validaProfissional");
 
-    if(this.email == null || this.razaoSocial == null || this.telefone == null || this.senha == null || this.senhaRepetida == null || this.nomeFantasia == null || this.cnpj == null){
+    if(this.email == null || this.telefone == null || this.senha == null || this.senhaRepetida == null || this.nomeCompleto == null || this.documento == null){
 
       alert("Preencha todos os campos corretamente!");
     
@@ -142,15 +139,6 @@ export class FaqComponent implements OnInit {
         this._msgErroTelefone = "Digite um telefone válido";
       }
 
-      if (!this.isTipo(this.razaoSocial))
-      {
-        this._msgErroRazao = "Razão Social Inválidos";
-      }
-      else{
-        this.cont++;
-        this._msgErroNome = "";
-      }
-
       if(this.senha != this.senhaRepetida){
         this._msgSenha = "As senhas digitadas não correspondem";
       }
@@ -168,7 +156,7 @@ export class FaqComponent implements OnInit {
           if(this.cont >= 4)
           {
               this.cont = 0;
-              this.enviarDadosEmpresa();
+              this.enviarDadosProfissional();
               
           }
           else{
@@ -208,7 +196,8 @@ export class FaqComponent implements OnInit {
       this.usuario.email = this.email;
       this.usuario.telefone = this.telefone;
       this.usuario.senha = this.senha;
-      this.usuario.tipo = "PF";
+      this.usuario.flag_profissional_saude = true;
+      this.usuario.documento_identificacao = this.documento;
 
       console.log(this.usuario);
       this.srv.insere(this.usuario).subscribe(
@@ -225,15 +214,12 @@ export class FaqComponent implements OnInit {
     }
 
 
-    enviarDadosEmpresa(){
+    enviarDadosProfissional(){
 
-      this.usuario.cnpj = this.cnpj;
+      
       this.usuario.email = this.email;
       this.usuario.telefone = this.telefone;
       this.usuario.senha = this.senha;
-      this.usuario.tipo = "PJ";
-      this.usuario.nomeFantasia = this.nomeFantasia;
-      this.usuario.razaoSocial = this.razaoSocial;
 
       console.log(this.usuario);
       this.srv.insere(this.usuario).subscribe(

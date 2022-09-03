@@ -19,7 +19,7 @@ export class UsuarioService {
 
   }
   public insere(usuario:Usuario){
-    return this.http.post("http://localhost:8080/usuario/novo",usuario);
+    return this.http.post("http://localhost:8080/user/new",usuario);
   }
 
   public atualiza(usuario: Usuario){

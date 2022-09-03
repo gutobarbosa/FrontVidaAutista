@@ -25,28 +25,27 @@ export class HomeComponent implements OnInit {
   public usuario: Usuario = new Usuario();
 
   public nomeCompleto!: string;
+  public nomeCompletoProfissional!: string;
+  public flag_profissional_saude!:boolean;
   public email!: string;
+  public documento!: string;
   public telefone!: string;
-  public senha!: string;
+  public senha: string;
   public senhaRepetida!: string;
   public senhaLogin!: string;
   public emailLogin!: string;
-  public razaoSocial!: string;
-  public nomeFantasia!: string;
-  public cnpj!: string;
   public _msgErroNome!: string;
   public _msgErroTelefone!: string;
+  public _msgErroDocumento!: string;
   public _msgErroEmail!: string;
   public _msgSenha!: string;
   public _msgSenhaForte!: string;
   public _msgSenhaFraca!: string;
-  public _msgErroRazao!: string;
-  public _msgErroCnpj!: string;
   public cont = 0;
   
 
 
-  constructor(public srv: UsuarioService, private router: Router) { }
+  constructor(public srv: UsuarioService, private router: Router) {  this.senha = "";  }
 
   ngOnInit() {
 
@@ -117,14 +116,13 @@ export class HomeComponent implements OnInit {
     }
 
   
-  public validaEmpresa(){
+  public validaProfissional(){
 
-    console.log("entrou no validaEmpresa");
+    console.log("entrou no validaProfissional1");
 
-    if(this.email == null || this.razaoSocial == null || this.telefone == null || this.senha == null || this.senhaRepetida == null || this.nomeFantasia == null || this.cnpj == null){
-
+    if(this.email == null || this.nomeCompletoProfissional == null || this.telefone == null || this.senha == null || this.senhaRepetida == null){
       alert("Preencha todos os campos corretamente!");
-    
+      
     }
     else{
 
@@ -144,14 +142,6 @@ export class HomeComponent implements OnInit {
         this._msgErroTelefone = "Digite um telefone válido";
       }
 
-      if (!this.isTipo(this.razaoSocial))
-      {
-        this._msgErroRazao = "Razão Social Inválidos";
-      }
-      else{
-        this.cont++;
-        this._msgErroNome = "";
-      }
 
       if(this.senha != this.senhaRepetida){
         this._msgSenha = "As senhas digitadas não correspondem";
@@ -170,7 +160,7 @@ export class HomeComponent implements OnInit {
           if(this.cont >= 4)
           {
               this.cont = 0;
-              this.enviarDadosEmpresa();
+              this.enviarDadosProfissionais();
               
           }
           else{
@@ -210,7 +200,7 @@ export class HomeComponent implements OnInit {
       this.usuario.email = this.email;
       this.usuario.telefone = this.telefone;
       this.usuario.senha = this.senha;
-      this.usuario.tipo = "PF";
+      this.usuario.flag_profissional_saude = false;
 
       console.log(this.usuario);
       this.srv.insere(this.usuario).subscribe(
@@ -227,15 +217,15 @@ export class HomeComponent implements OnInit {
     }
 
 
-    enviarDadosEmpresa(){
+    enviarDadosProfissionais(){
 
-      this.usuario.cnpj = this.cnpj;
+      this.usuario.nome = this.nomeCompleto;
       this.usuario.email = this.email;
       this.usuario.telefone = this.telefone;
       this.usuario.senha = this.senha;
-      this.usuario.tipo = "PJ";
-      this.usuario.nomeFantasia = this.nomeFantasia;
-      this.usuario.razaoSocial = this.razaoSocial;
+      this.usuario.flag_profissional_saude = true;
+      this.usuario.documento_identificacao = this.documento;
+
 
       console.log(this.usuario);
       this.srv.insere(this.usuario).subscribe(
