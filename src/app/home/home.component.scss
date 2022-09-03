@@ -1,7 +1,7 @@
 /* LOGO CLICKIN */
 
 #logo{
-    left: 50px; /* posiciona a 90px para a esquerda */ 
+    left: 50px; /* posiciona a 90px para a esquerda */
     top: 330px; /* posiciona a 70px para baixo */
     width: 200px;
     padding-top: 20px;
@@ -37,7 +37,7 @@ h1{
 
 #cadeirante{
 
-    margin-top: 3%; 
+    margin-top: 3%;
     width: 65%;
     height: 95%;
 
@@ -46,7 +46,7 @@ h1{
 /* IMAGEM QUEM SOMOS */
 
 #deficientesfoto{
- 
+
     height: 70%;
     width: 80%;
     margin-top: 13%;
@@ -62,7 +62,7 @@ h1{
 .parallax {
 
     background-image: url("../../assets/images/quebracabeça.jpeg");
-    min-height: 500px; 
+    min-height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@ h1{
 .parallaxdois {
 
     background-image: url("../../assets/images/quebracabeça1.jpeg");
-    min-height: 500px; 
+    min-height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -106,7 +106,7 @@ h1{
 h3{
     text-align: center;
     margin-top: 7%;
-    
+
 }
 
 
@@ -114,7 +114,7 @@ h3{
 
 h4{
     text-align: center;
-    
+
 }
 
 /* TEXTO */
@@ -139,7 +139,7 @@ p{
 #dropdownMenuButton{
     margin-right: 10px;
     height: 42px;
-    
+
 }
 
 /* VIDEO */
@@ -184,11 +184,11 @@ h2{
     color: blue;
 }
 
-input[type=number]::-webkit-inner-spin-button { 
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    
+
 }
-input[type=number] { 
+input[type=number] {
    -moz-appearance: textfield;
    appearance: textfield;
 
