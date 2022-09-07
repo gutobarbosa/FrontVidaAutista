@@ -1,13 +1,18 @@
 /* LOGO CLICKIN */
 
 #logo{
-    left: 50px; /* posiciona a 90px para a esquerda */
-    top: 330px; /* posiciona a 70px para baixo */
-    width: 200px;
-    padding-top: 20px;
-    padding-left: 20px;
+  left: 50px; /* posiciona a 90px para a esquerda */
+  top: 300px; /* posiciona a 70px para baixo */
+  width: 300px;
+  padding-left: 20px;
+}
+.navbar{
+margin-top: -70px;
 }
 
+.col-md-7 h3{
+padding-top: 100px;
+}
 /* BOTÃO CADASTRAR/ENTRAR */
 
 #cadastro{
@@ -24,7 +29,7 @@ h2{
 /* BOTAO ENVIAR */
 
 #botao{
-    left: 115px;
+    left: 185px;
 }
 
 /* FOOTER */
