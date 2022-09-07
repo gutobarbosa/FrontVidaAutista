@@ -27,11 +27,11 @@ export class UsuarioService {
   }
 
   public autenticar(usuario: Usuario) {
-    return this.http.post("http://localhost:8080/usuario/login", usuario);
+    return this.http.post("http://localhost:8080/user/login", usuario);
   }
 
   public buscarInfo(token: string){
-    return this.http.get("http://localhost:8080/usuario/infoDoUsuario?token="+token);
+    return this.http.get("http://localhost:8080/user/info?token="+token);
   }
 
   public  insereInfoUsuario(infousuario:InfoUsuario){

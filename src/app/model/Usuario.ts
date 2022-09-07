@@ -1,6 +1,4 @@
-import { Post } from './Post';
-
-  
+ 
 export class Usuario{
     
     public idUsuario!: number;

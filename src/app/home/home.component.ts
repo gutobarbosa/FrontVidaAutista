@@ -249,26 +249,24 @@ export class HomeComponent implements OnInit {
       this.usuario.email = this.emailLogin;
       this.usuario.senha = this.senhaLogin;
 
-      alert("E-mail e senha validados com sucesso!");
-      this.router.navigate(['/feed']);
-      
-      $('#btnfecharLogin').click();
-
-      /*
 
       this.srv.autenticar(this.usuario).subscribe(
-        (res: MyToken)=>{
+        (res: any)=>{
           // se deu certo        
           // armazeno o token no LocalStorage
           localStorage.setItem("MyToken", res.strToken);
           console.log(res.strToken);
+          alert("E-mail e senha validados com sucesso!");
+          this.router.navigate(['/jornada']);
+          
+          $('#btnfecharLogin').click();
 
          // window.location.reload();
         },
         (err)=>{
           alert("Usuário não cadastrado no sistema");
         }
-      );*/
+      );
     }
 
   }
