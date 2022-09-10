@@ -257,7 +257,7 @@ export class HomeComponent implements OnInit {
           localStorage.setItem("MyToken", res.strToken);
           console.log(res.strToken);
           alert("E-mail e senha validados com sucesso!");
-          this.router.navigate(['/jornada']);
+          this.router.navigate(['/dashboard']);
           
           $('#btnfecharLogin').click();
 

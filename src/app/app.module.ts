@@ -10,6 +10,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { FaqComponent } from './faq/faq.component';
 import { JornadaComponent } from './jornada/jornada.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AgendaComponent } from './agenda/agenda.component';
     ContatoComponent,
     FaqComponent,
     JornadaComponent,
-    AgendaComponent
+    AgendaComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
